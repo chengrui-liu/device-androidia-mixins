@@ -19,6 +19,7 @@ BOARD_FLASHFILES += $(PRODUCT_OUT)/scripts/sof_audio/configure_sof.sh
 BOARD_FLASHFILES += $(PRODUCT_OUT)/scripts/cam_sharing/0001-Netlink-sync.patch
 BOARD_FLASHFILES += $(PRODUCT_OUT)/scripts/cam_sharing/IntelCameraService
 BOARD_FLASHFILES += $(PRODUCT_OUT)/scripts/cam_sharing/virtualcamera.service
+BOARD_FLASHFILES += $(PRODUCT_OUT)/scripts/setup_cam_sharing.sh
 BOARD_FLASHFILES += $(PRODUCT_OUT)/scripts/setup_audio_host.sh
 BOARD_FLASHFILES += $(PRODUCT_OUT)/scripts/guest_pm_control
 BOARD_FLASHFILES += $(PRODUCT_OUT)/scripts/intel-thermal-conf.xml
@@ -31,6 +32,9 @@ BOARD_SEPOLICY_DIRS += $(INTEL_PATH_SEPOLICY)/bxt_usb
 
 # i915_async
 BOARD_SEPOLICY_DIRS += $(INTEL_PATH_SEPOLICY)/i915_async
+
+#for clipboard agent
+PRODUCT_PRIVATE_SEPOLICY_DIRS += $(INTEL_PATH_SEPOLICY)/clipboard_agent/private
 
 #add vendor property
 BOARD_SEPOLICY_DIRS += device/intel/sepolicy/vendor/
